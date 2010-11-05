@@ -35,6 +35,18 @@ BEGIN {
 use Dist::Zilla::PluginBundle::Basic;
 use Dist::Zilla::PluginBundle::Git;
 
+use Dist::Zilla::Plugin::Git::NextVersion;
+use Dist::Zilla::Plugin::ArchiveRelease;
+use Dist::Zilla::Plugin::AutoPrereqs;
+use Dist::Zilla::Plugin::CriticTests;
+use Dist::Zilla::Plugin::ExtraTests;
+use Dist::Zilla::Plugin::MetaConfig;
+use Dist::Zilla::Plugin::MetaJSON;
+use Dist::Zilla::Plugin::PodCoverageTests;
+use Dist::Zilla::Plugin::PodSyntaxTests;
+use Dist::Zilla::Plugin::PodWeaver;
+use Dist::Zilla::Plugin::Repository;
+
 sub configure {
   my $self = shift;
 
