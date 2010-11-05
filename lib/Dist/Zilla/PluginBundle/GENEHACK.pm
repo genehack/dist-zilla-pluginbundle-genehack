@@ -13,6 +13,7 @@ this:
 
     [@Basic]
 
+    [ArchiveRelease]
     [AutoPrereqs]
     [CriticTests]
     [ExtraTests]
@@ -38,12 +39,15 @@ sub configure {
   my $self = shift;
 
   $self->add_bundle('Git');
+
   $self->add_plugins(
     [ 'Git::NextVersion' => { first_version => '0.01 '} ],
   );
 
   $self->add_bundle('Basic');
+
   $self->add_plugins(
+    'ArchiveRelease' ,
     'AutoPrereqs' ,
     'CriticTests' ,
     'ExtraTests' ,
