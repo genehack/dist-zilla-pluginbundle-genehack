@@ -32,7 +32,6 @@ this:
     [PodCoverageTests]
     [PodSyntaxTests]
     [CompileTests]
-    [CheckExtraTests]
     [EOLTests]
     [KwaliteeTests]
     [Twitter]
@@ -52,7 +51,6 @@ use Dist::Zilla::Plugin::ArchiveRelease;
 use Dist::Zilla::Plugin::Authority;
 use Dist::Zilla::Plugin::AutoPrereqs;
 use Dist::Zilla::Plugin::Bugtracker;
-use Dist::Zilla::Plugin::CheckExtraTests;
 use Dist::Zilla::Plugin::CompileTests;
 use Dist::Zilla::Plugin::EOLTests;
 use Dist::Zilla::Plugin::ExtraTests;
@@ -151,7 +149,6 @@ sub configure {
 
     # oh, so very good
     'CompileTests' ,
-    'CheckExtraTests' ,
     'EOLTests' ,
     'KwaliteeTests' ,
   );
