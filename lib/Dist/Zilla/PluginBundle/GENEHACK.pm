@@ -45,10 +45,6 @@ use namespace::autoclean;
 use Dist::Zilla;
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 
-BEGIN {
-  $Dist::Zilla::PluginBundle::GENEHACK::VERSION = '1.004';
-}
-
 use Dist::Zilla::PluginBundle::Basic;
 use Dist::Zilla::PluginBundle::Git;
 
