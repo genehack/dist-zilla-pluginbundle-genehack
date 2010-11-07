@@ -1,2 +1,3 @@
 .build
 Dist-Zilla-PluginBundle-GENEHACK-*
+!releases/*.tar.gz
