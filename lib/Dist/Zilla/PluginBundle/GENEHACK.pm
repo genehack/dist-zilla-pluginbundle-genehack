@@ -36,6 +36,7 @@ this:
     [KwaliteeTests]
     [Twitter]
     [ArchiveRelease]
+    [InstallRelease]
 
 =cut
 
@@ -58,6 +59,7 @@ use Dist::Zilla::Plugin::GitFmtChanges;
 use Dist::Zilla::Plugin::Git::NextVersion;
 use Dist::Zilla::Plugin::Homepage;
 use Dist::Zilla::Plugin::InstallGuide;
+use Dist::Zilla::Plugin::InstallRelease;
 use Dist::Zilla::Plugin::KwaliteeTests;
 use Dist::Zilla::Plugin::MetaConfig;
 use Dist::Zilla::Plugin::MetaJSON;
@@ -157,6 +159,8 @@ sub configure {
   $self->add_plugins(
     # tweet releases. because i can.
     'Twitter' ,
+    # install dist after release
+    [ 'InstallRelease' => { install_command => 'cpanm .' } ] ,
   );
 
   ## PLUGINS WHAT NEED TO LOAD LATER THAN OTHERS
