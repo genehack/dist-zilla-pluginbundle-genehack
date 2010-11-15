@@ -37,6 +37,7 @@ this:
     [Twitter]
     [ArchiveRelease]
     [InstallRelease]
+    [NextRelease]
 
 =cut
 
@@ -64,6 +65,7 @@ use Dist::Zilla::Plugin::KwaliteeTests;
 use Dist::Zilla::Plugin::MetaConfig;
 use Dist::Zilla::Plugin::MetaJSON;
 use Dist::Zilla::Plugin::MinimumPerl;
+use Dist::Zilla::Plugin::NextRelease;
 use Dist::Zilla::Plugin::PkgVersion;
 use Dist::Zilla::Plugin::PodCoverageTests;
 use Dist::Zilla::Plugin::PodSyntaxTests;
@@ -138,6 +140,9 @@ sub configure {
 
     # auto-generate a README
     'ReadmeFromPod' ,
+
+    # munge Changes
+    'NextRelease' ,
   );
 
   ## PLUGINS WHAT ADD TESTS
