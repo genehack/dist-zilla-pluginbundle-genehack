@@ -2,6 +2,8 @@ Changes file for Dist-Zilla-PluginBundle-GENEHACK
 
 {{$NEXT}}
 
+0.1       2011-04-22 17:11:01 America/New_York
+
     * Remove GitFmtChanges
     * Add CheckContentHasChanges
     * change first_version to 0.1
