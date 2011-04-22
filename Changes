@@ -1,0 +1,12 @@
+Changes file for Dist-Zilla-PluginBundle-GENEHACK
+
+{{$NEXT}}
+
+    * Remove GitFmtChanges
+    * Add CheckContentHasChanges
+    * change first_version to 0.1
+      - also fix stupid typo... 
+
+0.04
+
+    Hadn't been maintaining Changes file. Bad coder, no cookie.

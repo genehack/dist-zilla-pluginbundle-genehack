@@ -8,7 +8,7 @@ this:
 
     [@Git]
     [Git::NextVersion]
-    first_version = 0.01
+    first_version = 0.1
 
     [@Basic]
 
@@ -16,6 +16,7 @@ this:
     [Authority]
     authority = 'cpan:GENEHACK'
     do_metadata = 1
+    [CheckChangesHasContent]
     [MinimumPerl]
     [PkgVersion]
     [PodWeaver]
@@ -25,7 +26,6 @@ this:
     [MetaJSON]
     [Repository]
     github_http = 0
-    [GitFmtChanges]
     [InstallGuide]
     [ReadmeFromPod]
     [ExtraTests]
@@ -56,7 +56,6 @@ use Dist::Zilla::Plugin::Bugtracker;
 use Dist::Zilla::Plugin::CompileTests;
 use Dist::Zilla::Plugin::EOLTests;
 use Dist::Zilla::Plugin::ExtraTests;
-use Dist::Zilla::Plugin::GitFmtChanges;
 use Dist::Zilla::Plugin::Git::NextVersion;
 use Dist::Zilla::Plugin::Homepage;
 use Dist::Zilla::Plugin::InstallGuide;
@@ -81,7 +80,7 @@ sub configure {
 
   $self->add_plugins(
     # auto-versioning from git
-    [ 'Git::NextVersion' => { first_version => '0.01' } ],
+    [ 'Git::NextVersion' => { first_version => '0.1' } ],
   );
 
   $self->add_bundle('Basic' );
@@ -92,6 +91,11 @@ sub configure {
     'AutoPrereqs' ,
   );
 
+  ## PLUGINS WHAT MAKE SURE WE DON'T LOOK STUPID
+  $self->add_plugins(
+    # does what it says on the tin
+    'CheckChangesHasContent' ,
+  );
 
   ## PLUGINS WHAT MUNGE CODE FILES
   $self->add_plugins(
@@ -132,9 +136,6 @@ sub configure {
 
   ## PLUGINS WHAT AUTO-GENERATE FILES
   $self->add_plugins(
-    # auto-generate CHANGES
-    'GitFmtChanges' ,
-
     # auto-make INSTALL
     'InstallGuide' ,
 
@@ -173,8 +174,6 @@ sub configure {
     # save released dists under ./releases
     'ArchiveRelease'
   );
-
-
 }
 
 1;
