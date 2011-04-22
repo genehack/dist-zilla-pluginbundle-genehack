@@ -71,7 +71,15 @@ use Dist::Zilla::Plugin::PodSyntaxTests;
 use Dist::Zilla::Plugin::PodWeaver;
 use Dist::Zilla::Plugin::ReadmeFromPod;
 use Dist::Zilla::Plugin::Repository;
+use Dist::Zilla::Plugin::TaskWeaver;
 use Dist::Zilla::Plugin::Twitter;
+
+has is_task => (
+  is      => 'ro',
+  isa     => 'Bool',
+  lazy    => 1,
+  default => sub { $_[0]->payload->{task} },
+);
 
 sub configure {
   my $self = shift;
@@ -107,11 +115,11 @@ sub configure {
 
     # include $VERSION in all files
     'PkgVersion',
-
-    # weave together POD bits
-    'PodWeaver' ,
-
   );
+
+  # weave together POD bits or build a task module
+  if ($self->is_task) { $self->add_plugins('TaskWeaver') }
+  else {                $self->add_plugins('PodWeaver')  }
 
   ## PLUGINS WHAT MUNGE META.* FILES
   $self->add_plugins(
