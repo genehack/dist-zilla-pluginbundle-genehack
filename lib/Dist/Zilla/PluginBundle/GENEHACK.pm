@@ -53,6 +53,7 @@ use Dist::Zilla::Plugin::ArchiveRelease;
 use Dist::Zilla::Plugin::Authority;
 use Dist::Zilla::Plugin::AutoPrereqs;
 use Dist::Zilla::Plugin::Bugtracker;
+use Dist::Zilla::Plugin::CheckChangesHasContent;
 use Dist::Zilla::Plugin::CompileTests;
 use Dist::Zilla::Plugin::EOLTests;
 use Dist::Zilla::Plugin::ExtraTests;
