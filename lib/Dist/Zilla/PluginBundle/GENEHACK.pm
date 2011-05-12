@@ -24,6 +24,7 @@ this:
     [Homepage]
     [MetaConfig]
     [MetaJSON]
+    [GithubMeta]
     [Repository]
     github_http = 0
     [InstallGuide]
@@ -58,6 +59,7 @@ use Dist::Zilla::Plugin::CompileTests;
 use Dist::Zilla::Plugin::EOLTests;
 use Dist::Zilla::Plugin::ExtraTests;
 use Dist::Zilla::Plugin::Git::NextVersion;
+use Dist::Zilla::Plugin::GithubMeta;
 use Dist::Zilla::Plugin::Homepage;
 use Dist::Zilla::Plugin::InstallGuide;
 use Dist::Zilla::Plugin::InstallRelease;
