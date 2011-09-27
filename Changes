@@ -2,6 +2,8 @@ Changes file for Dist-Zilla-PluginBundle-GENEHACK
 
 {{$NEXT}}
 
+0.3       2011-09-27 09:09:04 America/New_York
+
     * Deal with deprecated modules
 
 0.2       2011-07-08 21:38:14 America/New_York
