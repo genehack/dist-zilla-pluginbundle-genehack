@@ -2,6 +2,8 @@ Changes file for Dist-Zilla-PluginBundle-GENEHACK
 
 {{$NEXT}}
 
+0.4       2012-04-22 15:40:16 America/New_York
+
     * s/ReadmeFromPod/ReadmeMarkdownFromPod/
     * CopyFilesFromBuild, copy => README.mkdn
     * +Git::Commit, +Git::Tag
