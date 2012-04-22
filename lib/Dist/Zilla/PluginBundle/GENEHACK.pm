@@ -26,9 +26,10 @@ this:
     [MetaJSON]
     [GithubMeta]
     [Repository]
-    github_http = 0
     [InstallGuide]
-    [ReadmeFromPod]
+    [ReadmeMarkdownFromPod]
+    [CopyFilesFromBuild]
+    copy = README.mkdn
     [ExtraTests]
     [PodCoverageTests]
     [PodSyntaxTests]
@@ -36,6 +37,8 @@ this:
     [Test::Compile]
     [Test::Kwalitee]
     [Twitter]
+    [Git::Commit]
+    [Git::Tag]
     [ArchiveRelease]
     [InstallRelease]
     [NextRelease]
@@ -70,7 +73,7 @@ use Dist::Zilla::Plugin::PkgVersion;
 use Dist::Zilla::Plugin::PodCoverageTests;
 use Dist::Zilla::Plugin::PodSyntaxTests;
 use Dist::Zilla::Plugin::PodWeaver;
-use Dist::Zilla::Plugin::ReadmeFromPod;
+use Dist::Zilla::Plugin::ReadmeMarkdownFromPod;
 use Dist::Zilla::Plugin::Repository;
 use Dist::Zilla::Plugin::TaskWeaver;
 use Dist::Zilla::Plugin::Test::Compile;
@@ -150,8 +153,11 @@ sub configure {
     # auto-make INSTALL
     'InstallGuide' ,
 
-    # auto-generate a README
-    'ReadmeFromPod' ,
+    # auto-generate a README.mkdn
+    'ReadmeMarkdownFromPod' ,
+
+    # and copy it from the build
+    [ 'CopyFilesFromBuild' => { copy => 'README.mkdn' } ],
 
     # munge Changes
     'NextRelease' ,
@@ -176,6 +182,9 @@ sub configure {
   $self->add_plugins(
     # tweet releases. because i can.
     'Twitter' ,
+    # git magic
+    'Git::Commit',
+    'Git::Tag',
     # install dist after release
     [ 'InstallRelease' => { install_command => 'cpanm .' } ] ,
   );

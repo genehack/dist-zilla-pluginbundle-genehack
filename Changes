@@ -2,6 +2,10 @@ Changes file for Dist-Zilla-PluginBundle-GENEHACK
 
 {{$NEXT}}
 
+    * s/ReadmeFromPod/ReadmeMarkdownFromPod/
+    * CopyFilesFromBuild, copy => README.mkdn
+    * +Git::Commit, +Git::Tag
+
 0.3       2011-09-27 09:09:04 America/New_York
 
     * Deal with deprecated modules
