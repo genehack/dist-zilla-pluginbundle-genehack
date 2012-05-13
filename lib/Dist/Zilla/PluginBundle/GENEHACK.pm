@@ -35,7 +35,6 @@ this:
     [PodSyntaxTests]
     [EOLTests]
     [Test::Compile]
-    [Test::Kwalitee]
     [Twitter]
     [Git::Commit]
     [Git::Tag]
@@ -77,7 +76,6 @@ use Dist::Zilla::Plugin::ReadmeMarkdownFromPod;
 use Dist::Zilla::Plugin::Repository;
 use Dist::Zilla::Plugin::TaskWeaver;
 use Dist::Zilla::Plugin::Test::Compile;
-use Dist::Zilla::Plugin::Test::Kwalitee;
 use Dist::Zilla::Plugin::Twitter;
 
 has is_task => (
@@ -97,7 +95,7 @@ sub configure {
     [ 'Git::NextVersion' => { first_version => '0.1' } ],
   );
 
-  $self->add_bundle('Basic' );
+  $self->add_bundle('Basic');
 
   ## PLUGINS WHAT MUNGE MAKEFILE
   $self->add_plugins(
@@ -175,7 +173,6 @@ sub configure {
     # oh, so very good
     'EOLTests' ,
     'Test::Compile' ,
-    'Test::Kwalitee' ,
   );
 
   ## PLUGINS WHAT DO STUFF
