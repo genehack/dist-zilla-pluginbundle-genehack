@@ -57,6 +57,7 @@ use Dist::Zilla::Plugin::Authority;
 use Dist::Zilla::Plugin::AutoPrereqs;
 use Dist::Zilla::Plugin::Bugtracker;
 use Dist::Zilla::Plugin::CheckChangesHasContent;
+use Dist::Zilla::Plugin::CopyFilesFromBuild;
 use Dist::Zilla::Plugin::EOLTests;
 use Dist::Zilla::Plugin::ExtraTests;
 use Dist::Zilla::Plugin::Git::NextVersion;
