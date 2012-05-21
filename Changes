@@ -2,6 +2,8 @@ Changes file for Dist-Zilla-PluginBundle-GENEHACK
 
 {{$NEXT}}
 
+0.6       2012-05-21 06:28:13 America/New_York
+
    * Munge DZP::Git::NextVersion first_version
    * Properly add DZP::CopyFilesFromBuild
    * Add Pod::Weaver::Plugin::Encoding prereq
