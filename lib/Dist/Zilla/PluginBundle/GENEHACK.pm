@@ -93,7 +93,7 @@ sub configure {
 
   $self->add_plugins(
     # auto-versioning from git
-    [ 'Git::NextVersion' => { first_version => '0.1' } ],
+    [ 'Git::NextVersion' => { first_version => '0.01' } ],
   );
 
   $self->add_bundle('Basic');
