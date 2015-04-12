@@ -185,8 +185,8 @@ sub configure {
     'Test::Compile' ,
 
     # git magic
-    'Git::Tag',
     ['Git::Commit' => { add_files_in => 'releases/' } ],
+    'Git::Tag',
 
     # install dist after release
     [ 'InstallRelease' => { install_command => 'cpanm .' } ] ,
