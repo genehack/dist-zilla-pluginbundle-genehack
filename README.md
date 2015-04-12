@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::GENEHACK - BeLike::GENEHACK when you zilla your dist
 
 # VERSION
 
-[![CPAN version](https://badge.fury.io/pl/Git-Wrapper.svg)](http://badge.fury.io/pl/Git-Wrapper)
+[![CPAN version](https://badge.fury.io/pl/Dist-Zilla-PluginBundle-GENEHACK.svg)](http://badge.fury.io/pl/Dist-Zilla-PluginBundle-GENEHACK)
 
 # INFO
 
