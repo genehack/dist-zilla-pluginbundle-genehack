@@ -2,6 +2,8 @@ Changes file for Dist-Zilla-PluginBundle-GENEHACK
 
 {{$NEXT}}
 
+0.6_02    2015-04-11 21:26:43-07:00 America/Los_Angeles
+
    * Hopefully fix release archiving working with committing
 
 0.6_01    2015-04-11 21:06:38-07:00 America/Los_Angeles
