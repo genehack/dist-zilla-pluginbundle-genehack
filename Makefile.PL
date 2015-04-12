@@ -18,7 +18,6 @@ my %WriteMakefileArgs = (
   "MIN_PERL_VERSION" => "5.006",
   "NAME" => "Dist::Zilla::PluginBundle::GENEHACK",
   "PREREQ_PM" => {
-    "DDP" => 0,
     "Dist::Zilla" => 0,
     "Dist::Zilla::Plugin::ArchiveRelease" => 0,
     "Dist::Zilla::Plugin::Authority" => 0,
@@ -70,7 +69,6 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
-  "DDP" => 0,
   "Dist::Zilla" => 0,
   "Dist::Zilla::Plugin::ArchiveRelease" => 0,
   "Dist::Zilla::Plugin::Authority" => 0,
