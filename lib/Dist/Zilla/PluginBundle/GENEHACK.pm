@@ -132,14 +132,15 @@ sub configure {
     # does what it says on the tin
     'CheckChangesHasContent' ,
 
+    # include $VERSION in all files
+    'PkgVersion',
+
     # munge files to add authority info
     [ 'Authority' => { authority => 'cpan:GENEHACK' , do_metadata => 1 } ],
 
     # automagically determine minimum required perl version
     'MinimumPerl' ,
 
-    # include $VERSION in all files
-    'PkgVersion',
   );
 
   # weave together POD bits or build a task module

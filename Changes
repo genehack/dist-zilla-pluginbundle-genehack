@@ -2,6 +2,8 @@ Changes file for Dist-Zilla-PluginBundle-GENEHACK
 
 {{$NEXT}}
 
+  * Relocate PkgVersion to silence warning.
+
 0.6_03    2015-04-11 21:30:49-07:00 America/Los_Angeles
 
   * Another crack at proper release archive/commit combo
