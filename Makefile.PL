@@ -27,6 +27,7 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Plugin::GatherDir" => 0,
     "Dist::Zilla::Plugin::Git::Commit" => 0,
     "Dist::Zilla::Plugin::Git::NextVersion" => 0,
+    "Dist::Zilla::Plugin::Git::Push" => 0,
     "Dist::Zilla::Plugin::Git::Tag" => 0,
     "Dist::Zilla::Plugin::GithubMeta" => 0,
     "Dist::Zilla::Plugin::InstallGuide" => 0,
@@ -59,7 +60,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.6_04",
+  "VERSION" => "0.6_05",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -76,6 +77,7 @@ my %FallbackPrereqs = (
   "Dist::Zilla::Plugin::GatherDir" => 0,
   "Dist::Zilla::Plugin::Git::Commit" => 0,
   "Dist::Zilla::Plugin::Git::NextVersion" => 0,
+  "Dist::Zilla::Plugin::Git::Push" => 0,
   "Dist::Zilla::Plugin::Git::Tag" => 0,
   "Dist::Zilla::Plugin::GithubMeta" => 0,
   "Dist::Zilla::Plugin::InstallGuide" => 0,
