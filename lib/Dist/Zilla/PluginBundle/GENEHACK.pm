@@ -1,5 +1,5 @@
-package Dist::Zilla::PluginBundle::GENEHACK;
 # ABSTRACT: BeLike::GENEHACK when you zilla your dist
+package Dist::Zilla::PluginBundle::GENEHACK;
 
 =head1 SYNOPSIS
 
@@ -30,6 +30,7 @@ this:
     [MetaConfig]
     [MetaJSON]
     [GithubMeta]
+    ; if needed, override homepage with 'homepage' param to @GENEHACK
     issues = 1
     [InstallGuide]
     [CopyFilesFromBuild]
@@ -91,6 +92,12 @@ use Dist::Zilla::Plugin::Twitter;
 use Dist::Zilla::Plugin::Run::BeforeBuild;
 use Dist::Zilla::Plugin::Run::AfterBuild;
 
+has homepage => (
+  is      => 'ro' ,
+  isa     => 'Maybe[Str]' ,
+  lazy    => 1 ,
+  default => sub { $_[0]->payload->{homepage} } ,
+);
 
 has is_task => (
   is      => 'ro',
@@ -144,8 +151,13 @@ sub configure {
     'MetaJSON' ,
   );
 
+  my $github_meta_config = { issues => 1 };
+  $github_meta_config->{homepage} = $self->homepage
+    if $self->homepage;
 
   $self->add_plugins(
+    [ 'GithubMeta' => $github_meta_config ] ,
+
     # auto-make INSTALL
     'InstallGuide' ,
 
