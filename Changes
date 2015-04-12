@@ -2,6 +2,8 @@ Changes file for Dist-Zilla-PluginBundle-GENEHACK
 
 {{$NEXT}}
 
+0.6_01    2015-04-11 21:06:38-07:00 America/Los_Angeles
+
    * Huge update and re-organization of plugins
    * Remove PWP::Encoding dependancy (Sergey Romanov)
 
