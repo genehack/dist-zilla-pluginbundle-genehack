@@ -1,5 +1,7 @@
 # ABSTRACT: BeLike::GENEHACK when you zilla your dist
+
 package Dist::Zilla::PluginBundle::GENEHACK;
+
 
 =head1 SYNOPSIS
 
@@ -45,13 +47,16 @@ this:
     [Git::Commit]
     [InstallRelease]
     install_command='cpanm .'
-    [ArchiveRelease]
     [Twitter]
     [Run::BeforeBuild]
     run = rm -f Makefile.PL
     [Run::AfterBuild]
     run = cp %d/Makefile.PL ./
     run = git status --porcelain | grep 'M Makefile.PL' && git commit -m 'auto-committed by dist.ini' Makefile.PL || echo Makefile.PL up to date
+    [Run::Release]
+    run = mv %a ./releases/
+    add_files_in = releases/
+
 
 =cut
 
@@ -87,10 +92,8 @@ use Dist::Zilla::Plugin::Test::Compile;
 use Dist::Zilla::Plugin::Git::Tag;
 use Dist::Zilla::Plugin::Git::Commit;
 use Dist::Zilla::Plugin::InstallRelease;
-use Dist::Zilla::Plugin::ArchiveRelease;
 use Dist::Zilla::Plugin::Twitter;
-use Dist::Zilla::Plugin::Run::BeforeBuild;
-use Dist::Zilla::Plugin::Run::AfterBuild;
+use Dist::Zilla::Plugin::Run;
 
 has homepage => (
   is      => 'ro' ,
@@ -185,9 +188,6 @@ sub configure {
     # install dist after release
     [ 'InstallRelease' => { install_command => 'cpanm .' } ] ,
 
-    # save released dists under ./releases
-    'ArchiveRelease' ,
-
     # tweet releases. because i can.
     'Twitter' ,
 
@@ -201,6 +201,11 @@ sub configure {
         "git status --porcelain | grep 'M Makefile.PL' && git commit -m 'auto-committed by dist.ini' Makefile.PL || echo Makefile.PL up to date" ,
       ] ,
     }],
+
+    ['Run::Release' => {
+      run          => 'mv %a ./releases/' ,
+      add_files_in => 'releases/' ,
+    }] ,
   );
 }
 
