@@ -47,6 +47,7 @@ this:
     add_files_in = releases/
     [InstallRelease]
     install_command='cpanm .'
+    [Git::Push]
     [Twitter]
     [Run::BeforeBuild]
     run = rm -f Makefile.PL
@@ -92,6 +93,7 @@ use Dist::Zilla::Plugin::Test::Compile;
 use Dist::Zilla::Plugin::Git::Tag;
 use Dist::Zilla::Plugin::Git::Commit;
 use Dist::Zilla::Plugin::InstallRelease;
+use Dist::Zilla::Plugin::Git::Push;
 use Dist::Zilla::Plugin::Twitter;
 use Dist::Zilla::Plugin::Run;
 
@@ -188,6 +190,8 @@ sub configure {
 
     # install dist after release
     [ 'InstallRelease' => { install_command => 'cpanm .' } ] ,
+
+    'Git::Push',
 
     # tweet releases. because i can.
     'Twitter' ,

@@ -2,6 +2,8 @@ Changes file for Dist-Zilla-PluginBundle-GENEHACK
 
 {{$NEXT}}
 
+  * Add Git::Push
+
 0.6_04    2015-04-11 21:42:43-07:00 America/Los_Angeles
 
   * Relocate PkgVersion to silence warning.
