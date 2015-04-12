@@ -2,6 +2,8 @@ Changes file for Dist-Zilla-PluginBundle-GENEHACK
 
 {{$NEXT}}
 
+  * Another crack at proper release archive/commit combo
+
 0.6_02    2015-04-11 21:26:43-07:00 America/Los_Angeles
 
    * Hopefully fix release archiving working with committing

@@ -1,7 +1,6 @@
-# ABSTRACT: BeLike::GENEHACK when you zilla your dist
-
 package Dist::Zilla::PluginBundle::GENEHACK;
 
+# ABSTRACT: BeLike::GENEHACK when you zilla your dist
 
 =head1 SYNOPSIS
 
@@ -45,6 +44,7 @@ this:
     [Test::Compile]
     [Git::Tag]
     [Git::Commit]
+    add_files_in = releases/
     [InstallRelease]
     install_command='cpanm .'
     [Twitter]
@@ -183,7 +183,7 @@ sub configure {
 
     # git magic
     'Git::Tag',
-    'Git::Commit',
+    ['Git::Commit' => { add_files_in => 'releases/' } ],
 
     # install dist after release
     [ 'InstallRelease' => { install_command => 'cpanm .' } ] ,
