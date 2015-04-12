@@ -2,6 +2,9 @@ Changes file for Dist-Zilla-PluginBundle-GENEHACK
 
 {{$NEXT}}
 
+   * Huge update and re-organization of plugins
+   * Remove PWP::Encoding dependancy (Sergey Romanov)
+
 0.6       2012-05-21 06:28:13 America/New_York
 
    * Munge DZP::Git::NextVersion first_version
