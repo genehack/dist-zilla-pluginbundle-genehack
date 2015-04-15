@@ -182,7 +182,7 @@ sub configure {
 
     # oh, so very good
     'Test::EOL' ,
-    'Test::Compile' ,
+    ['Test::Compile' => { bail_out_on_fail => 1 } ],
 
     # git magic
     ['Git::Commit' => { add_files_in => 'releases/' } ],
