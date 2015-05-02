@@ -20,40 +20,61 @@ this:
     [Git::NextVersion]
 
     [AutoPrereqs]
+
     [CheckChangesHasContent]
+
+    [PkgVersion]
+
     [Authority]
     authority='cpan:GENEHACK'
     do_metadata=1
+
     [MinimumPerl]
-    [PkgVersion]
+
     [Taskweaver]   ; if is_task is set
     [PodWeaver]    ; if is_task is NOT set
+
     [MetaConfig]
+
     [MetaJSON]
+
     [GithubMeta]
     ; if needed, override homepage with 'homepage' param to @GENEHACK
     issues = 1
+
     [InstallGuide]
+
     [CopyFilesFromBuild]
     copy=INSTALL
+
     [NextRelease]
+
     [ExtraTests]
+
     [PodCoverageTests]
     [PodSyntaxTests]
-    [EOLTests]
+
+    [Test::EOL]
     [Test::Compile]
-    [Git::Tag]
+
     [Git::Commit]
     add_files_in = releases/
+    [Git::Tag]
+
     [InstallRelease]
     install_command='cpanm .'
+
     [Git::Push]
+
     [Twitter]
+
     [Run::BeforeBuild]
     run = rm -f Makefile.PL
+
     [Run::AfterBuild]
     run = cp %d/Makefile.PL ./
     run = git status --porcelain | grep 'M Makefile.PL' && git commit -m 'auto-committed by dist.ini' Makefile.PL || echo Makefile.PL up to date
+
     [Run::Release]
     run = mv %a ./releases/
     add_files_in = releases/
